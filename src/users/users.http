@@ -6,3 +6,12 @@ Content-Type: application/json
     "email": "test@gmail.com",
     "password": "1234"
 }
+
+### Find a particular user with a given ID
+GET http://localhost:3000/auth/5
+
+### Find all users with a given email
+GET http://localhost:3000/auth?email=test@gmail.com
+
+### Delete user by ID
+DELETE http://localhost:3001/huma-tale/employees/22
