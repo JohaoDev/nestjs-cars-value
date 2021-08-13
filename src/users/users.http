@@ -8,10 +8,17 @@ Content-Type: application/json
 }
 
 ### Find a particular user with a given ID
-GET http://localhost:3000/auth/5
+GET http://localhost:3000/auth/4
 
 ### Find all users with a given email
 GET http://localhost:3000/auth?email=test@gmail.com
 
-### Delete user by ID
-DELETE http://localhost:3001/huma-tale/employees/22
+### Update a user
+PATCH http://localhost:3000/auth/4
+
+{
+    "password": "aaaa"
+}
+
+### Delete a user by ID
+DELETE http://localhost:3000/auth/4

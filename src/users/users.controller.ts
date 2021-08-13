@@ -11,8 +11,11 @@ import {
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { UsersService } from './users.service';
+import { Serialize } from '../interceptors/serialize.interceptor';
+import { UsersDto } from './dto/users.dto';
 
 @Controller('auth')
+@Serialize(UsersDto)
 export class UsersController {
   constructor(private usersService: UsersService) {}
 
@@ -36,7 +39,7 @@ export class UsersController {
     return this.usersService.remove(id);
   }
 
-  @Patch('/employee/:id')
+  @Patch('/:id')
   updateUser(@Param('id') id: number, @Body() body: UpdateUserDto) {
     return this.usersService.update(id, body);
   }
